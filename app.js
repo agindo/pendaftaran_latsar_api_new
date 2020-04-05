@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 
-const config = require('./config/config');
+const config = require('./config/Config');
 const routes = require('./routes/Routes');
 
 const app = express();
@@ -15,7 +15,7 @@ const app = express();
 mongoose.connect(config.DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
+    useFindAndModify: true
 });
 
 app.use(cors());
